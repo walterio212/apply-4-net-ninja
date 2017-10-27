@@ -18,8 +18,8 @@ Instructions
 5. Go sleep for a while.
 6. Write http://localhost:8080/wildfly-kitchensink-angularjs/#/home in your browser
 7. Wait for Syntagma's customer email from job@syntagma.com.ar with the detailed new requirement to be solved.
-8. (Github) Push the changes to your forked repository and ask for a git's pull request on our project.
-9. Answer the customer's email explaining the changes you made and how did you solved the problem.
+8. (Github) Push the changes to your forked repository and share the URL with US!
+9. Answer the customer's email explaining the changes you made and how did you solved the problem (include the GitHub link to your repo).
 
 Test
 ------------------------------------
