@@ -58,7 +58,7 @@ namespace ninja.test {
             manager.Insert(invoice);
             Invoice result = manager.GetById(id);
 
-            Assert.AreEqual(invoice, result);
+            Assert.AreEqual(invoice.Id, result.Id);
 
         }
 
@@ -72,9 +72,13 @@ namespace ninja.test {
             */
 
             #region Escribir el código dentro de este bloque
+            InvoiceManager manager = new InvoiceManager();
 
-            throw new NotImplementedException();
+            manager.Delete(4);
 
+            Invoice result = manager.GetById(4);
+
+            Assert.IsNull(result);
             #endregion Escribir el código dentro de este bloque
 
         }

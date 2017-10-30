@@ -55,10 +55,18 @@ namespace ninja.model.Manager {
               Este método tiene que reemplazar todos los items del detalle de la factura
               por los recibidos por parámetro
              */
-
+            
             #region Escribir el código dentro de este bloque
 
-            throw new NotImplementedException();
+
+            Invoice invoice = this.GetById(id);
+
+            invoice.DeleteDetails();
+
+            foreach (InvoiceDetail invoiceDetail in detail)
+            {
+                invoice.AddDetail(invoiceDetail);
+            }
 
             #endregion Escribir el código dentro de este bloque
 
