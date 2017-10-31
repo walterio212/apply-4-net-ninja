@@ -1,0 +1,43 @@
+﻿@using ninja.Models;
+
+@model IList<InvoiceModel>
+
+@{
+    ViewBag.Title = "Facturas";
+}
+
+<h2>Facturas</h2>
+
+<html>
+<head>
+</head>
+<body>
+    <container>
+        <table class="table-bordered">
+            <thead>
+                <tr>
+                    <td>Id</td>
+                    <td>Tipo</td>
+                    <td>Precio con Impuesto</td>
+                    <td>Accion</td>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (InvoiceModel invoice in Model) {
+                    <tr>
+                        <td>@invoice.Id</td>
+                        <td>@invoice.Type</td>
+                        <td>@invoice.PriceWithTaxes</td>
+                        <td>
+                            <input type="button" class="btn-default" value="Ver Detalle" title="Ver Detalle" onclick="@("window.location.href='" + @Url.Action("Detail", "Invoice", new { id= invoice.Id }) + "'");"/>
+                            <input type="button" class="btn-default" value="Borrar Factura" title="Borrar Factura" onclick="@("window.location.href='" + @Url.Action("Delete", "Invoice", new { id= invoice.Id }) + "'");" />
+                            <input type="button" class="btn-default" value="Editar Factura" title="Editar Factura" onclick="@("window.location.href='" + @Url.Action("Update", "Invoice", new { id= invoice.Id }) + "'");" />
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </container>
+</body>
+</html>
+

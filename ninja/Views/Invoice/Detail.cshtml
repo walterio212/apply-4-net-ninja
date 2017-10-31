@@ -1,0 +1,47 @@
+﻿@using ninja.Models;
+@model InvoiceModel
+
+@{
+    ViewBag.Title = "Detalle Factura";
+}
+
+<h2>Detalle Factura</h2>
+<html>
+<head>
+
+</head>
+<body>
+    @Html.LabelFor(model => model.Id)
+    @Html.DisplayTextFor(model => model.Id)
+    @Html.Label("Tipo")
+    @Html.DisplayTextFor(model => model.Type)
+
+    <div class="col-lg-12 col-md-12 col-sm-12">
+        <table class="table-bordered col-lg-12 col-md-12 col-sm-12">
+            <thead>
+                <tr>
+                    <td>Id</td>
+                    <td>Descripcion</td>
+                    <td>Cantidad</td>
+                    <td>Precio Unitario</td>
+                    <td>Precio Total</td>
+                    <td>Precio Total con Impuestos</td>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (InvoiceDetailModel detail in Model.Details)
+                {
+                    <tr>
+                        <td>@detail.Id</td>
+                        <td>@detail.Description</td>
+                        <td>@detail.Amount</td>
+                        <td>@detail.UnitPrice</td>
+                        <td>@detail.TotalPrice</td>
+                        <td>@detail.TotalPriceWithTaxes</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

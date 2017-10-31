@@ -1,0 +1,20 @@
+﻿@using ninja.Models;
+@model InvoiceCrearModel
+
+@{
+    ViewBag.Title = "New";
+}
+
+<h2>Crear Factura</h2>
+
+@using (Html.BeginForm("New", "Invoice", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.ValidationSummary(true)
+    <fieldset>
+        @Html.DropDownListFor(model => model.Type, Model.Types)        
+        
+        <input type="submit" value="Crear" />
+    </fieldset>
+}
+
+

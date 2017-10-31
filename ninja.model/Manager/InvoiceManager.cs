@@ -8,7 +8,8 @@ using ninja.model.Mock;
 
 namespace ninja.model.Manager {
 
-    public class InvoiceManager {
+    public class InvoiceManager : IInvoiceManager
+    {
 
         private InvoiceMock _mock;
 
